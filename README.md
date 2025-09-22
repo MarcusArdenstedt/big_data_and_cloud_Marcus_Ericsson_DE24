@@ -1,0 +1,2 @@
+# big_data_and_cloud_Marcus_Ericsson_DE24
+Practical developement and NoSQL
