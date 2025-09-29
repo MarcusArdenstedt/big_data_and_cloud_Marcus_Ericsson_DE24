@@ -4,8 +4,8 @@ a) In question 2, you have created a VM in your Azure subscription. Can you find
 
 ### Data stores
 b) Similarly, check out descriptions of Amazon S3, Google Cloud Storage and Azure Blob Storage. What is the similar purpose that they are serving?
-
-## Solution
+--
+### Solution
 a) 
 - Amazon Web Services: Amazon EC2 (Elastic Compute Cloud)
 - GOOGLE Cloud Platform: Google Compute Engine

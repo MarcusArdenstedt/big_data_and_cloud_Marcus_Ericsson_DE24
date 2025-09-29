@@ -15,8 +15,8 @@ c) Explore the use of Bastion to connect to your VM. When the connection is succ
 
 a) 
 - Rgioner: Vilket land/Stad min VM körs i.
-Om man väljer rgioner långt bort desto längre tar datatrafiken och man får hög latency.
-- Availability zone: vilket specifik datacenter i regionen. Uptime: Om man sprider resource i flera zoner, minskar man risken att ett enskilt fel tar ner din tjänst.
+Om man väljer regioner långt bort desto längre tar datatrafiken och man får hög latency.
+- Availability zone: vilket specifik datacenter i regionen. Uptime, Om man sprider resource i flera zoner minskar man risken att ett enskilt fel tar ner sin tjänst.
 
 
 b) 6 stycken
