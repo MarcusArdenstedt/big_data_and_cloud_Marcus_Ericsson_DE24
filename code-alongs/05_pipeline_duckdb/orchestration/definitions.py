@@ -30,8 +30,7 @@ dlt_resource = DagsterDltResource()
     ),
 )
 def dlt_load(
-    context: dg.AssetExecutionContext, dlt: DagsterDltResource
-):  # <- if you need loggin data sparas
+    context: dg.AssetExecutionContext, dlt: DagsterDltResource):  # <- if you need loggin data sparas
     ### pydantic, dependency injection, signature: olika namn till dagster
     yield from dlt.run(context=context)
 
@@ -45,10 +44,11 @@ profiles_dir = Path.home() / ".dbt"
 ## create dagster dbt project object
 dbt_project = DbtProject(project_dir=dbt_project_directory, profiles_dir=profiles_dir)
 
+## CLI commands e.g dbt build
 dbt_resource = DbtCliResource(project_dir=dbt_project)
 
 ## create a manifest json file
-dbt_project.prepare_if_dev()
+dbt_project.prepare_if_dev()  # manifst runtime
 
 
 ## create dagster dbt asset
