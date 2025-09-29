@@ -27,9 +27,9 @@ def jobads_resource(params):
         yield ad
 
 
-# @dlt.source
-# def jobads_source():
-#     return jobads_resource(params)
+@dlt.source
+def jobads_source():
+    return jobads_resource(params)
 
 # def run_pipeline(table_name):
 #     pipeline = dlt.pipeline(

@@ -54,7 +54,7 @@ dbt_project.prepare_if_dev()
 ## create dagster dbt asset
 @dbt_assets(manifest=dbt_project.manifest_path)
 def dbt_models(context: dg.AssetExecutionContext, dbt: DbtCliResource):
-    yield from dbt.cli(["dbt_build"], context=context).stream()
+    yield from dbt.cli(["build"], context=context).stream()
 
 #-------------------------------------------------------------
 
