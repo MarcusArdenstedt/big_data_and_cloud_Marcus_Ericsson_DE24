@@ -210,3 +210,7 @@ __marimo__/
 *.wal
 *.duckdb
 
+# dbt
+target/
+dbt_packages/
+logs/
