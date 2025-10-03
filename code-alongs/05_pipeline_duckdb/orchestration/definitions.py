@@ -48,7 +48,7 @@ dbt_project = DbtProject(project_dir=dbt_project_directory, profiles_dir=profile
 dbt_resource = DbtCliResource(project_dir=dbt_project)
 
 ## create a manifest json file
-dbt_project.prepare_if_dev()  # manifst runtime
+dbt_project.prepare_if_dev()  # manifest runtime
 
 
 ## create dagster dbt asset
@@ -69,7 +69,7 @@ job_dbt = dg.define_asset_job("job_dbt", selection= dg.AssetSelection.key_prefix
 # Schedule
 schedule_dlt = dg.ScheduleDefinition(
     job= job_dlt,
-    cron_schedule= "05 13 * * *"
+    cron_schedule= "50 07 * * *"
 )
 # ---------------------------------------------------------
 
