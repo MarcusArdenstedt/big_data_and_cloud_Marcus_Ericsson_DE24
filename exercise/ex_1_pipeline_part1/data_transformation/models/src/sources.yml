@@ -1,0 +1,11 @@
+sources:
+  - name: tv_series
+    schema: staging
+    tables:
+      - name: stg_series
+        identifier: got_st_lotr_series
+        meta:
+          dagster:
+            asset_key: ['dlt_tvseries_source_df_series']
+
+

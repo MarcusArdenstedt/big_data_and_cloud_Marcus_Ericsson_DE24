@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "tvseries"
+version = "2025.10.15"
+dependencies = [
+"dlt",
+"dbt-core",
+"dagster",
+"pandas"]
+
+requires-python = ">=3.8"
+authors = [{name = "Marcus"}] 
+
+description = "Tv-series for three series to test data ingestion, docker, azure and databricks"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["orchestration*", "data_extract_load*"]
+exclude = ["data_transformation*", "data_warehouse*"]
+

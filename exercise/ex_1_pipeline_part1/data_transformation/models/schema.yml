@@ -1,0 +1,98 @@
+models:
+    - name: fct_tvseries
+      description: "Fact table represent the episodes for each tv-series"
+      columns: 
+        - name: id_info
+          description: "Foreign key from dim.info"
+          tests:
+            - not_null
+            - relationships:
+                arguments:
+                  to: ref('info')
+                  field: id_info
+
+        - name: id_serie
+          description: "Foreign key from dim.serie"
+          tests:
+            - not_null
+            - relationships:
+                arguments:
+                  to: ref('serie')
+                  field: id_serie
+
+        - name: season
+          description: "INTEGER"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: INTEGER
+        - name: number
+          description: "INTEGER"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: INTEGER
+
+        - name: airtime
+          description: "TIME"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: VARCHAR
+
+        - name: airdate
+          description: "DATE"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: DATE
+
+     
+    - name: serie
+      description: "Dimension table gives attribute to describe what tv-serie it is"
+      columns:
+        - name: id_serie
+          description: "Primary key. A surrogate key consisting of show_name and links_show"
+          tests:
+            - not_null
+            - unique
+        - name: show_name
+          description: "varchar"
+        - name: links_show
+          description: "varchar"
+
+    - name: info 
+      description: "Dimension table gives attribute that describe the information to each episodes"
+      columns:
+        - name: id_info
+          description: "Primary key. A surrogate key consisting of name and summary"
+          tests:
+            - not_null
+            - unique
+        - name: name
+          description: "VARCHAR"
+        - name: rating_average
+          description: DOUBLE
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: DOUBLE
+        - name: runtime
+          description: "INTEGER"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: INTEGER
+        - name: summary
+          description: "VARCHAR"
+        - name: image_medium
+          description: "VARCHAR"
+        - name: image_original
+          description: "VARCHAR"
+        
+            
+
+
+    - name: rating_serie
+      description: "Data to use aggregate and visualize in a dashboard"
+      columns: 
+        - name: show_name
+          description: "VARCHAR"
+          tests:
+            - dbt_expectations.expect_column_values_to_be_of_type:
+                column_type: VARCHAR
+    

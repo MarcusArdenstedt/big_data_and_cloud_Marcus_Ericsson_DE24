@@ -1,0 +1,6 @@
+data_tests:
+  - name: show_name
+    description: "Checking show_name is not empty and have the right names"
+
+  - name: test_season
+    description: "Checking that the season is not 0"
