@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools >=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "YH-utbildningar"
+version = "2025.10.15"
+dependencies = [
+"taipy",
+"pandas",
+"plotly-express"]
+
+requires-python = ">=3.8"
+authors = [{name = "Marcus"}] 
+
+description = "Demo on taipy dashboard, upload and deploy on azure using IaC in terraform"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*", "frontend*", "utils*", "pages*"]
+exclude = ["assets*", "iac*", "data*"]
