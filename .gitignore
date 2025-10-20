@@ -222,4 +222,6 @@ logs/
 # vscode
 .vscode
 
-iac
+code-alongs/14_IaC_terraform_deploy_taipy/iac/env_variable.sh
+.terraform.lock.hcl
+.terraform

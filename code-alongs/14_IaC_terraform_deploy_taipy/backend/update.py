@@ -15,3 +15,6 @@ def filter_data(state):
 
     state.educational_area_title = state.selected_educational_area
     state.municipality_title = state.number_municipalities
+    
+    
+    
